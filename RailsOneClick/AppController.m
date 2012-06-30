@@ -15,7 +15,7 @@
 @synthesize view;
 @synthesize currentViewController;
 
-- (BOOL)isFileExists:(NSString *)path
+- (BOOL)fileExists:(NSString *)path
 {
     NSString* documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     NSString* foofile = [documentsPath stringByAppendingPathComponent:path];
@@ -24,12 +24,12 @@
 
 - (BOOL)isRubyInstalled
 {
-    return [self isFileExists:@"rails_one_click/ruby/bin/ruby"];
+    return [self fileExists:@"rails_one_click/ruby/bin/ruby"];
 }
 
 - (BOOL)isRailsInstalled
 {
-    return [self isFileExists:@"rails_one_click/ruby/bin/rails"];
+    return [self fileExists:@"rails_one_click/ruby/bin/rails"];
 }
 
 - (void)awakeFromNib
